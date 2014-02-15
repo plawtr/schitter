@@ -9,6 +9,7 @@ gem 'dm-transactions'
 gem 'bcrypt-ruby'
 gem 'rack-flash3'
 gem 'sinatra-partial'
+gem 'unicorn'
 
 group :development, :test do
 	gem 'rspec'
