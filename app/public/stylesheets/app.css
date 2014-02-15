@@ -1,0 +1,167 @@
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {	margin: 0;	padding: 0;	border: 0;	font-size: 100%;	font: inherit;	vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {	display: block;}body {	line-height: 1;}ol, ul {	list-style: none;}blockquote, q {	quotes: none;}blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: none;}table {	border-collapse: collapse;	border-spacing: 0;}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;\
+	-webkit-font-smoothing: antialiased;
+}
+
+a.button {
+	display: inline-block;
+	background-color: #60b044;
+	background-image: -webkit-linear-gradient(#8add6d, #60b044);
+	background-repeat: repeat-x;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	margin: 5px 5px 5px 5px;
+	padding: 7px 12px;
+	font-size: 13px;
+	font-weight: bold;
+	border-radius: 3px;
+	border: 1px solid #d5d5d5;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+a.button.highlighted {
+  background-color: #eeeeee;
+  background-image: -webkit-linear-gradient(#fcfcfc, #eee);
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+  margin: auto 0;
+}
+
+header {
+	height: 50px;
+	background-color: black;
+	color: white;
+	display: flex;
+	padding: 0px 30px;
+	text-decoration: none;
+}
+
+header > * {
+  margin: auto 0;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+header #logo {
+	margin: auto 0;
+	margin-right: 20px;
+	display: flex;
+	font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+	font-weight: 100;
+	font-size: 30px;
+}
+
+header #user-links {
+  flex: 1; 
+  -webkit-flex: 1;
+  text-align: right;  
+}
+
+#schits-container {
+	margin-top: 20px;
+	margin-bottom: 80px;
+	margin-left:auto;
+	margin-right:auto;
+	width:40%;
+	-webkit-box-shadow: rgba(200,200,200,.7) 0 4px 10px -1px;
+	box-shadow: rgba(200,200,200,.7) 0 4px 10px -1px;
+	border-radius: 6px;
+
+}
+
+#schits-container #title{
+	font-size: 16px;
+	padding: 5px 10px;
+	color: #66757f;
+	border-radius: 6px 6px 0 0;
+	border: 1px solid #e1e8ed;
+	border-bottom-width: 0;
+}
+
+.schit {
+	/*padding: 5px 10px;*/
+	border: 1px solid #e1e8ed;
+	border-bottom: none;
+ 	
+}
+.schit em {
+
+font-weight: bold;
+color: #292f33; 
+}
+
+.schit .message {
+  padding: 10px;
+  padding-top: 0px;
+  color: #4183c4
+	font-size: 14px;
+/*	font-weight: bold; 
+	background-image: -webkit-linear-gradient(#fafafa, #eaeaea); 
+	background-repeat: repeat-x;*/
+/*	border: 1px solid #e1e8ed;
+	border-bottom-width: 0;*/
+}
+
+.schit .description {
+  padding: 5px 10px;
+  border-top:none;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	line-height: 1.4;
+	color: #66757f;
+	font-weight: normal;
+	font-size: 12px;
+
+}
+
+.schit .source {
+  /*text-align: right;*/
+  font-size: 12px;
+}
+
+#schits-container #footer{
+	padding: 5px 10px;
+	color: #66757f;
+	border-radius: 0 0 6px 6px ;
+	border: 1px solid #e1e8ed;
+	border-top: 1px solid white;
+
+}
+
+
+footer {
+  display: flex;
+  background-color: rgba(0,0,0,0.2);
+  background-image: -webkit-linear-gradient(#fafafa, #eaeaea);
+  border: 1px solid #d5d5d5; 
+
+}
+
+
+footer > * {
+  margin: auto inherit;
+}
+
+footer img {
+  /* http://stackoverflow.com/questions/10658475/3px-extra-height-on-a-div-with-an-image-inside-it */
+  vertical-align: top;
+  margin-left: 30px
+}
+
+footer #technologies {
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+footer p {
+  padding: 5px 25px;
+  color: #66757f;
+}

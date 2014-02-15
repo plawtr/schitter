@@ -1,0 +1,13 @@
+<div id='schits-container'>
+	<div id="title">
+	Schits
+	</div>
+	<ul>
+		<% @schits.each do |schit| %>
+			<%= partial :schit, :locals => {:schit => schit}  %>
+		<% end %>
+	</ul>
+	<div id="footer">
+	
+	</div>
+</div>
