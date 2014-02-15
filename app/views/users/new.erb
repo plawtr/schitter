@@ -1,10 +1,20 @@
-<h1>Please sign up</h1>
-
-<form action="/users" method="post">
-Email: <input name="email" type="text" value=<%= @user.email %> >
-Full Name: <input name="name" type="text">
-Username: <input name="user_name" type="text">
-Password: <input name="password" type="password">
-Confirm Password: <input name="password_confirmation" type="password">
-<input type="submit" value="Sign up">
-</form>
+<div id="new-schit">	
+	<form action="/users" method="post">
+		<p>
+		<input name="email" type="text" placeholder="Email" placeholder="Email">
+		</p>
+		<p>
+		<input name="name" type="text" placeholder="Full Name">
+		</p>
+		<p>
+		<input name="user_name" type="text" placeholder="Username">
+		</p>
+		<p>
+		<input name="password" type="password" placeholder="Password">
+		</p>
+		<p>
+		<input name="password_confirmation" type="password" placeholder="Confirm Password">
+		</p>
+		<input type="submit" value="Sign up">
+	</form>
+</div>

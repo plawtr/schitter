@@ -120,8 +120,10 @@ feature "User forgets the password" do
 		fill_in :password_confirmation, :with =>"wrong_password"
 		click_button "Update"
 		expect(page).not_to have_content("Password updated.")
+		expect(page).to have_content("Password does not match the confirmation")
 		expect(User.authenticate('test@test.com', "new_password")).to be_false
-		fill_in :password_confirmation, :with =>"wrong_password"
+		password_recovery('test@test.com', 'test', 'new_password')
+		fill_in :password_confirmation, :with =>'new_password'
 		click_button "Update"
 		expect(page).to have_content("Password updated.")
 	end

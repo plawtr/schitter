@@ -31,6 +31,21 @@ feature "User adds a new schit" do
 		expect(schit.time_stamp.to_i).to eq(time.to_i)
 	end
 
+	scenario "and the result should show his name and username" do
+		expect(Schit.count).to eq(0)
+		sign_in('test@test.com', 'test')
+		visit "/schits/new"
+		add_schit("First Schit.")
+		expect(Schit.count).to eq(1)
+		schit = Schit.first
+		#note - we are checking the time values not the instances of time.
+		visit "/"
+		expect(page).to have_content("Testname Testlastname")
+		expect(page).to have_content("testusername")
+	end
+
+
+
 	def add_schit(message)
 		within('#new-schit') do
 			fill_in 'message', :with => message

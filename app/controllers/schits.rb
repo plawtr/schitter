@@ -16,7 +16,7 @@ module Controllers
 
 	  post '/schits' do
 	  	message = params["message"]
-			Schit.create(:message => message, :time_stamp => Time.now)
+			Schit.create(:message => message, :time_stamp => Time.now, :user => current_user)
 	  	redirect to('/')	
 	  end
 	end

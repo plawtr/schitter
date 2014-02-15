@@ -31,18 +31,18 @@
     end
     
     post "/users/reset_password" do
-      user = User.first(:password_token => params[:token])
-      user.password = params[:password]
-      user.password_confirmation = params[:password_confirmation]
-      user.password_token = nil
-      user.password_token_timestamp = nil
+      @user = User.first(:password_token => params[:token])
+      @user.password = params[:password]
+      @user.password_confirmation = params[:password_confirmation]
+      @user.password_token = nil
+      @user.password_token_timestamp = nil
 
-      if user.save
-        session[:user_id] = user.id
+      if @user.save
+        session[:user_id] = @user.id
         flash[:notice] = "Password updated."
         redirect to('/')
       else
-        flash.now[:errors] = user.errors.full_messages
+        flash[:errors] = @user.errors.full_messages
         redirect to "/users/reset_password/"+params[:token]
       end
     end

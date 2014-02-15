@@ -1,6 +1,8 @@
-<h1>Please sign in</h1>
-<form method="post" action="/sessions">
-	Email:<input type="text" name="email">
-	Password <a href='/sessions/forgot_password'>(forgot password)</a>: <input name="password" type="password">
-	<input type="submit" value="Sign in">
-</form>
+<div id="new-schit">
+	<form method="post" action="/sessions">
+		<input type="text" name="email" placeholder="Email">
+		<input name="password" type="password" placeholder="Password">
+		<input type="submit" value="Sign in">
+		<a href='/sessions/forgot_password'>(forgot password?)</a>
+	</form>
+</div>

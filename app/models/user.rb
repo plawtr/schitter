@@ -12,7 +12,7 @@ class User
 	property :password_token, Text
 	property :password_token_timestamp, String
 
-	has n, :schits, through: Resource
+	has n, :schits, :through => Resource
 
 	attr_reader :password
 	attr_accessor :password_confirmation

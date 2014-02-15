@@ -3,9 +3,9 @@
 
 	 <div class='description'>
 	  <div class='source'>
-	    <em><%= "schit.user.name" %></em>
-	     @<%= "schit.user.user_name" %> &middot; 
-	     <%= schit.time_stamp %>
+	    <em><%= schit.user.name %></em>
+	     @<%= schit.user.user_name %> &middot; 
+	     <%= time_ago(schit.time_stamp) %>
 	  </div>
   </div>
 

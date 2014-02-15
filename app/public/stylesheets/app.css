@@ -1,11 +1,48 @@
 html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {	margin: 0;	padding: 0;	border: 0;	font-size: 100%;	font: inherit;	vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {	display: block;}body {	line-height: 1;}ol, ul {	list-style: none;}blockquote, q {	quotes: none;}blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: none;}table {	border-collapse: collapse;	border-spacing: 0;}
 
+* {
+margin: 0;
+box-sizing: border-box;
+}
+
+html, body {
+height: 100%;
+}
+
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;\
 	-webkit-font-smoothing: antialiased;
 }
 
-a.button {
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -2em;
+}
+
+.flash {
+  text-align: center;
+	margin-top: 20px;
+	margin-left:auto;
+	margin-right:auto;
+	width:40%;
+  padding: 20px 0;
+  border-radius: 6px;
+  -webkit-box-shadow: rgba(200,200,200,.7) 0 4px 10px -1px;
+	box-shadow: rgba(200,200,200,.7) 0 4px 10px -1px;
+  color: white;
+}
+
+.flash.notice {
+  background-color: #60b044;
+}
+
+.flash.error {
+ 	background-color: rgba(169,29,42,0.75);
+}
+
+ .button {
 	display: inline-block;
 	background-color: #60b044;
 	background-image: -webkit-linear-gradient(#8add6d, #60b044);
@@ -14,22 +51,27 @@ a.button {
 	text-decoration: none;
 	text-align: center;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-	margin: 5px 5px 5px 5px;
-	padding: 7px 12px;
+	margin: auto 0;
+	padding: 3px 12px;
 	font-size: 13px;
 	font-weight: bold;
 	border-radius: 3px;
 	border: 1px solid #d5d5d5;
 	vertical-align: middle;
 	cursor: pointer;
+
 }
 
-a.button.highlighted {
+a.button {
+	padding: 6px 12px;
+}
+
+.button.highlighted {
   background-color: #eeeeee;
   background-image: -webkit-linear-gradient(#fcfcfc, #eee);
   color: #333;
   text-shadow: 0 1px 0 rgba(255,255,255,0.9);
-  margin: auto 0;
+  
 }
 
 header {
@@ -63,6 +105,15 @@ header #user-links {
   flex: 1; 
   -webkit-flex: 1;
   text-align: right;  
+  display: inline-block;
+}
+
+header #user-links > * {
+  display: inline-block;
+}
+
+header #user-links #welcome-message {
+  
 }
 
 #schits-container {
@@ -87,7 +138,6 @@ header #user-links {
 }
 
 .schit {
-	/*padding: 5px 10px;*/
 	border: 1px solid #e1e8ed;
 	border-bottom: none;
  	
@@ -128,12 +178,23 @@ color: #292f33;
 }
 
 #schits-container #footer{
-	padding: 5px 10px;
+	padding: 2px 10px;
 	color: #66757f;
 	border-radius: 0 0 6px 6px ;
 	border: 1px solid #e1e8ed;
 	border-top: 1px solid white;
 
+}
+
+#new-schit {
+	padding: 30px 20px;
+	border: 1px solid #e1e8ed;
+	text-align: center;
+	border-radius: 6px;
+}
+
+#new-schit p {
+	padding: 10px
 }
 
 
@@ -164,4 +225,9 @@ footer #technologies {
 footer p {
   padding: 5px 25px;
   color: #66757f;
+}
+
+
+footer, .push {
+	height: 2em;
 }
