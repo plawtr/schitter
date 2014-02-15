@@ -10,6 +10,7 @@ gem 'bcrypt-ruby'
 gem 'rack-flash3'
 gem 'sinatra-partial'
 gem 'unicorn'
+gem 'pg'
 
 group :development, :test do
 	gem 'rspec'
