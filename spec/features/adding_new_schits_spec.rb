@@ -15,7 +15,7 @@ feature "User adds a new schit" do
 	scenario "when browsing the homepage and not signed in" do
 		expect(Schit.count).to eq(0)
 		visit "/schits/new"
-		expect(page).to have_content("Please sign in")
+		expect(page).to have_css('div#new-schit form input')
 	end
 
 	scenario "when browsing the homepage and signed in" do
