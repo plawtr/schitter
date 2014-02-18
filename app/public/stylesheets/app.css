@@ -140,12 +140,14 @@ header #user-links #welcome-message {
 .schit {
 	border: 1px solid #e1e8ed;
 	border-bottom: none;
- 	
+	position:relative;
+
 }
+
 .schit em {
 
-font-weight: bold;
-color: #292f33; 
+	font-weight: bold;
+	color: #292f33; 
 }
 
 .schit .message {
@@ -175,6 +177,21 @@ color: #292f33;
 .schit .source {
   /*text-align: right;*/
   font-size: 12px;
+}
+
+.schit .flag {
+	position: absolute;
+	font-size: 22px;
+  right: 3px;
+  top: 5px;
+  padding: 10px;
+  padding-top: 0px;
+  color: #66757f;
+  cursor: pointer;
+}
+
+.schit .flag.solid {
+ 	opacity: 0;
 }
 
 #schits-container #footer{
