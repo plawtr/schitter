@@ -9,6 +9,7 @@ require 'capybara/cucumber'
 require 'rspec'
 
 Capybara.app = Schitter
+Capybara.javascript_driver = :poltergeist
 
 class SchitterWorld
   include Capybara::DSL

@@ -3,13 +3,13 @@
 function showSchitFavouritedNotice(schit) {
 	var favourited = !!$(schit).data("favourited");
 	var name = $(schit).find(".message").text();
-	var message = favourited ? name + " was added to favs" : name + " was removed from favs";   
+	var message = favourited ? name + " was added to favourites" : name + " was removed from favourites";   
 	var $flash = $("<div></div>").addClass('flash notice').html(message);
 	$flash.appendTo('#flash-container');
 	window.setTimeout(function() {
 		$flash.fadeOut();
-	}, 2000);
-	console.log(message);
+	}, 1000);
+	// console.log(message);
 }
 
 function addFavouritesHandler() {
@@ -23,10 +23,26 @@ function addFavouritesHandler() {
 	});
 }
 
-function prepareNewSchitHandler(){
-	$('.add-schit').click(function(event) {
+function prepareFormHandler(){
+	var form = $('#container #ajax-form form');
+	form.submit(function(event) {
+		var addSchit = function(data) {
+			$('#schits').prepend(data);
+		}
+		var data = form.serialize();
+		$.post(form.attr('action'), data, addLink);
+		event.preventDefault();
+	});
+}
+
+function prepareRemoteFormsHandler(){
+	$('.add-schit, .new-user, .new-session').click(function(event) {
 		$.get($(this).attr("href"), function(data) {
-			console.log(data);
+			if ($('#ajax-form').length == 0) {
+				$("#container").prepend("<div id='ajax-form'></div>");
+			}
+			$("#container #ajax-form").html(data);
+			prepareFormHandler();
 		});
 		event.preventDefault();
 	});
@@ -34,6 +50,6 @@ function prepareNewSchitHandler(){
 
 $(function() {
 	addFavouritesHandler();
-	prepareNewSchitHandler();
+	prepareRemoteFormsHandler();
 })
 

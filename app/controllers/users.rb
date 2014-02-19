@@ -2,7 +2,7 @@
   class Users < Base 
     get '/users/new' do
     	@user = User.new
-    	erb :"users/new"
+    	erb :"users/new", :layout => !request.xhr? 
     end
 
     post '/users' do
@@ -16,7 +16,7 @@
   	  	redirect to('/')
   	  else
   	  	flash.now[:errors] = @user.errors.full_messages
-  	  	erb :"users/new" 
+  	  	erb :"users/new", :layout => !request.xhr?  
   	  end
     end
 

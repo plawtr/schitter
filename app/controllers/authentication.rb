@@ -2,7 +2,7 @@ module Controllers
 	class Authentication < Base
 
 	  get '/sessions/new' do
-	  	erb :"sessions/new"
+	  	erb :"sessions/new", :layout => !request.xhr? 
 	  end
 
 	  post '/sessions' do
@@ -13,7 +13,7 @@ module Controllers
 	  		redirect to '/'
 	  	else
 	  		flash[:errors] = ["The email or password are incorrect"]
-	  		erb :"sessions/new"
+	  		erb :"sessions/new", :layout => !request.xhr? 
 	  	end
 	  end
 

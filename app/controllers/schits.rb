@@ -7,9 +7,9 @@ module Controllers
 
 	  get '/schits/new' do
 	  	if current_user
-		  	erb :"schits/new"
+		  	erb :"schits/new", :layout => !request.xhr? 
 	  	else
-	  		erb :"sessions/new"
+	  		erb :"sessions/new", :layout => !request.xhr?
 	  	end
 
 	  end

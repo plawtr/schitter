@@ -1,23 +1,24 @@
-<div id="title">
-Schits
-</div>
-<ul>
-	<% if @schits.count == 0 %>
-		<li class='schit'>
-			<div class='description'>
-  			<div class='source'> 
+<div id="schits-container">
+	<div id="title">
+		Schits
+	</div>
+	
+	<ul>
+		<% if @schits.count == 0 %>
+			<li class='schit'>
+				<div class='description'>
+	  			<div class='source'> 
+				  </div>
+		  	</div>
+				<div class='message'> 
+				  Hooray, no schits here yet!
 			  </div>
-	  	</div>
-			<div class='message'> 
-			  Hooray, no schits here yet!
-		  </div>
-		</li>
-	<% else %> 
-		<% @schits.each do |schit| %>
-			<%= partial :schit, :locals => {:schit => schit}  %>
+			</li>
+		<% else %> 
+			<% @schits.each do |schit| %>
+				<%= partial :schit, :locals => {:schit => schit}  %>
+			<% end %>
 		<% end %>
-	<% end %>
-</ul>
-<div id="footer">
-
+	</ul>
+	<div id="footer"></div>
 </div>

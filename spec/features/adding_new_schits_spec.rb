@@ -44,6 +44,13 @@ feature "User adds a new schit" do
 		expect(page).to have_content("testusername")
 	end
 
+	scenario "from the homepage using an ajax form", :js => true do
+	  visit '/'
+	  click_link "Schit!"
+	  add_schit("Example")
+	  expect(page).to have_content('Example')
+	  expect(current_path).to eq('/') # we're still on the frontpage
+	end
 
 
 	def add_schit(message)
