@@ -9,17 +9,27 @@ ENV["RACK_ENV"] = 'test'
 
 require 'database_cleaner'
 require 'capybara/rspec'
+require 'capybara/poltergeist'
 require './app/server'
 require './app/schitter'
 
 Capybara.app = Schitter
+Capybara.javascript_driver = :poltergeist
+
 
 RSpec.configure do |config|
 
 	config.before(:suite) do
-		DatabaseCleaner.strategy = :truncation
 		DatabaseCleaner.clean_with(:truncation)
 	end
+
+	config.before(:each) do
+		DatabaseCleaner.strategy = :transaction
+	end	
+
+	config.before(:each, :js => true) do
+    DatabaseCleaner.strategy = :truncation
+  end
 
 	config.before(:each) do
 		DatabaseCleaner.start

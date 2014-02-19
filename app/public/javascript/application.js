@@ -28,9 +28,10 @@ function prepareFormHandler(){
 	form.submit(function(event) {
 		var addSchit = function(data) {
 			$('#schits').prepend(data);
+			$('#ajax-form').remove();
 		}
 		var data = form.serialize();
-		$.post(form.attr('action'), data, addLink);
+		$.post(form.attr('action'), data, addSchit);
 		event.preventDefault();
 	});
 }
@@ -41,7 +42,7 @@ function prepareRemoteFormsHandler(){
 			if ($('#ajax-form').length == 0) {
 				$("#container").prepend("<div id='ajax-form'></div>");
 			}
-			$("#container #ajax-form").html(data);
+			$("#container").html(data);
 			prepareFormHandler();
 		});
 		event.preventDefault();

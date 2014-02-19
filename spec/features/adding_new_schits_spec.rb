@@ -45,6 +45,7 @@ feature "User adds a new schit" do
 	end
 
 	scenario "from the homepage using an ajax form", :js => true do
+		sign_in("test@test.com", 'test')
 	  visit '/'
 	  click_link "Schit!"
 	  add_schit("Example")

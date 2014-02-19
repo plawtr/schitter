@@ -2,7 +2,7 @@ module Controllers
 	class Schits < Base
 	  get '/' do
 	  	@schits = Schit.all(:order => [ :time_stamp.desc ])
-	    erb :index
+	    erb :index, :layout => !request.xhr? 
 	  end
 
 	  get '/schits/new' do
@@ -16,9 +16,13 @@ module Controllers
 
 	  post '/schits' do
 	  	message = params["message"]
-			Schit.create(:message => message, :time_stamp => Time.now, :user => current_user)
-	  	redirect to('/')	
-	  end
+			schit = Schit.create(:message => message, :time_stamp => Time.now, :user => current_user)
+	  	if request.xhr?
+				erb :schit, :locals => {:schit => schit}, :layout => false
+			else
+				redirect to('/')
+			end
+		end
 	end
 end
 

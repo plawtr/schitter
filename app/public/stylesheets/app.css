@@ -78,14 +78,10 @@ header {
 	height: 50px;
 	background-color: black;
 	color: white;
-	display: flex;
 	padding: 0px 30px;
 	text-decoration: none;
 }
 
-header > * {
-  margin: auto 0;
-}
 
 header a {
   color: white;
@@ -93,19 +89,19 @@ header a {
 }
 
 header #logo {
-	margin: auto 0;
-	margin-right: 20px;
-	display: flex;
+	margin-right: 0;
+	
 	font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
 	font-weight: 100;
 	font-size: 30px;
+	width: 20%;
+
 }
 
-header #user-links {
-  flex: 1; 
-  -webkit-flex: 1;
+header nav {
+	margin-top: 10px;
+	float: right;
   text-align: right;  
-  display: inline-block;
 }
 
 header #user-links > * {
@@ -113,7 +109,7 @@ header #user-links > * {
 }
 
 header #user-links #welcome-message {
-  
+  margin-left: 50px;
 }
 
 #schits-container {

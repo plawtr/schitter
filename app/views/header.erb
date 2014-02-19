@@ -1,13 +1,12 @@
 <header>
-	<div id="logo">
+	<span id="logo">
     <a href="/">
       <img src="/images/logo.png">
     </a>
-  </div>
-
-	<a href="/schits/new" class="add-schit button highlighted">Schit!</a>
+  </span>
 	
-	<div id="user-links">
+	<nav id="user-links">
+		<a href="/schits/new" class="add-schit button highlighted">Schit!</a>
 		<% if current_user %>
 			<span id="welcome-message">		 
 				Welcome, <%= current_user.email %>!
@@ -20,5 +19,5 @@
 			<a href='/users/new' class="new-user button">Sign up</a>
 			<a href='/sessions/new' class="new-session button">Sign in</a>	
 		<% end %>
-	</div>
+	</nav>
 </header>
