@@ -28,7 +28,7 @@ feature "User adds a new schit" do
 		schit = Schit.first
 		expect(schit.message).to eq("First Schit.")
 		#note - we are checking the time values not the instances of time.
-		expect(schit.time_stamp.to_i).to eq(time.to_i)
+		expect(schit.time_stamp.to_i-time.to_i <=1).to be_true
 	end
 
 	scenario "and the result should show his name and username" do

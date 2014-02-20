@@ -12,7 +12,7 @@ module Controllers
 	  		session[:user_id] = user.id
 	  		redirect to '/'
 	  	else
-	  		flash[:errors] = ["The email or password are incorrect"]
+	  		flash.now[:errors] = ["The email or password are incorrect"]
 	  		erb :"sessions/new", :layout => !request.xhr? 
 	  	end
 	  end

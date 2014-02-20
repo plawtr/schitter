@@ -20,5 +20,6 @@ group :development, :test do
 	gem 'cucumber'
 	gem 'cucumber-sinatra'
 	gem 'poltergeist'
+	gem 'ngrok'
 
 end

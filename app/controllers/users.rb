@@ -25,7 +25,7 @@
     	if @user && (Time.now-Time.parse(@user.password_token_timestamp))<3600
     		erb :"users/new_password"
     	else
-  	  	flash[:notice] = "This password reset url does not exist or has expired."
+  	  	flash.now[:notice] = "This password reset url does not exist or has expired."
   	  	redirect to '/'  		
     	end
     end
